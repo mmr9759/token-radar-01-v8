@@ -1,0 +1,54 @@
+:root {
+  --bg: #0b1220; --panel: #111c2e; --panel2: #16233a; --line: #24344f;
+  --text: #e8eef7; --muted: #93a4bd; --accent: #f5b942; --accent2: #5ec8a6;
+  --farm: #5ec8a6; --thin: #f5b942; --skip: #e26d5a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif; }
+.top { display: flex; justify-content: space-between; gap: 24px; padding: 28px 32px 12px; flex-wrap: wrap; }
+h1 { margin: 0; font-size: 30px; letter-spacing: -0.5px; }
+.tag { font-size: 13px; background: var(--accent); color: #1a1405; border-radius: 20px; padding: 3px 10px; vertical-align: middle; }
+.sub { color: var(--muted); max-width: 640px; margin: 8px 0 0; }
+.stats { display: flex; gap: 10px; flex-wrap: wrap; align-content: flex-start; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; min-width: 110px; }
+.stat b { display: block; font-size: 20px; color: var(--accent); }
+.stat span { font-size: 12px; color: var(--muted); }
+.method { margin: 8px 32px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+.method h2, .farm-note h2 { margin: 0 0 8px; font-size: 17px; }
+.method p { margin: 6px 0; color: var(--muted); }
+.method p b { color: var(--text); }
+.blind { border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+.blind th, .blind td { border: 1px solid var(--line); padding: 6px 12px; text-align: left; }
+.blind th { background: var(--panel2); }
+.fine { font-size: 13px; }
+.controls { display: flex; gap: 10px; margin: 16px 32px; flex-wrap: wrap; align-items: center; }
+.controls input, .controls select { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font-size: 14px; }
+.controls input { flex: 1 1 220px; }
+.check { color: var(--muted); font-size: 14px; display: flex; gap: 6px; align-items: center; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; margin: 0 32px; align-items: start; }
+.board-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.board { width: 100%; border-collapse: collapse; font-size: 14px; }
+.board th { text-align: left; padding: 10px 12px; color: var(--muted); border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; }
+.board td { padding: 9px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.board tbody tr { cursor: pointer; }
+.board tbody tr:hover, .board tbody tr.sel { background: var(--panel2); }
+.board .num { text-align: right; font-variant-numeric: tabular-nums; }
+.pill { border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 700; }
+.pill.FARM { background: #123f33; color: var(--farm); }
+.pill.THIN { background: #4a3a10; color: var(--thin); }
+.pill.SKIP { background: #4a1d17; color: var(--skip); }
+.watch { color: var(--accent); font-size: 12px; }
+.count { padding: 10px 14px; color: var(--muted); margin: 0; }
+.detail { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; position: sticky; top: 12px; }
+.detail h2 { margin: 0 0 4px; font-size: 21px; }
+.detail h3 { margin: 16px 0 6px; font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
+.detail dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 8px 0; font-size: 14px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.detail ol { margin: 6px 0; padding-left: 20px; font-size: 14px; }
+.detail ol li { margin-bottom: 8px; }
+.detail .big { font-size: 26px; color: var(--accent); font-weight: 700; }
+.farm-note { margin: 16px 32px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+.farm-note p { color: var(--muted); margin: 6px 0; }
+footer { margin: 8px 32px 28px; color: var(--muted); font-size: 13px; }
+@media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } .detail { position: static; } }

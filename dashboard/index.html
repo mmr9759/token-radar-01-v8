@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Radar — radar-8: comps-calibrated value, tested blind</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Launch Radar <span class="tag">radar-8</span></h1>
+    <p class="sub">Which pre-token protocol is worth farming next, and what do I do about it. Every value is priced off the snapshot's own traded tokens — never a hand-kept list of names.</p>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section class="method">
+  <h2>How the value is priced</h2>
+  <p id="method-text"></p>
+  <table class="blind" id="blind-table"></table>
+  <p class="fine" id="audit-text"></p>
+</section>
+
+<section class="controls">
+  <input id="q" type="search" placeholder="Search protocol…" aria-label="Search protocol">
+  <select id="f-cat" aria-label="Filter by category"><option value="">All categories</option></select>
+  <select id="f-chain" aria-label="Filter by chain"><option value="">All chains</option></select>
+  <select id="f-verdict" aria-label="Filter by verdict">
+    <option value="">All verdicts</option><option>FARM</option><option>THIN</option><option>SKIP</option>
+  </select>
+  <label class="check"><input id="f-watch" type="checkbox"> Watchlist only</label>
+  <select id="sort" aria-label="Sort board">
+    <option value="value">Sort: implied value</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="growth">Sort: 7-day growth</option>
+    <option value="expected">Sort: expected airdrop</option>
+    <option value="name">Sort: name A–Z</option>
+  </select>
+</section>
+
+<main class="layout">
+  <div class="board-wrap">
+    <table class="board" id="board">
+      <thead><tr>
+        <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th>
+        <th data-k="chains">Chains</th><th data-k="tvl">TVL</th><th data-k="growth">7d</th>
+        <th data-k="value">Implied value</th><th>P10–P90 band</th><th>Rank range</th>
+        <th data-k="verdict">Verdict</th><th data-k="expected">Expected / farmer</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="count" id="count"></p>
+  </div>
+  <aside class="detail" id="detail" aria-label="Protocol detail"></aside>
+</main>
+
+<section class="farm-note">
+  <h2>How the farm verdict is netted</h2>
+  <p id="farm-text"></p>
+</section>
+
+<footer>
+  <p id="foot"></p>
+  <p class="fine">A protocol on this board records no token in the snapshot — that is what the data says, never proof it has none. Values are the radar's own claim. Built with a model that runs on your own machine; superbot.gg is one free client that can run an uncensored model if you want to build your own radar.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
